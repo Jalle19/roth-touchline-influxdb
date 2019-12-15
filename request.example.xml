@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<measurements>
+    <measurement name="CD">
+        <items>
+            <item n="CD.uname">
+                <n>CD.uname</n>
+            </item>
+            <item n="CD.upass">
+                <n>CD.upass</n>
+            </item>
+            <item n="CD.reg">
+                <n>CD.reg</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Controller">
+        <items>
+            <item n="R0.DateTime">
+                <n>R0.DateTime</n>
+            </item>
+            <item n="R0.ErrorCode">
+                <n>R0.ErrorCode</n>
+            </item>
+            <item n="R0.OPModeRegler">
+                <n>R0.OPModeRegler</n>
+            </item>
+            <item n="R0.Safety">
+                <n>R0.Safety</n>
+            </item>
+            <item n="R0.SystemStatus">
+                <n>R0.SystemStatus</n>
+            </item>
+            <item n="R0.Taupunkt">
+                <n>R0.Taupunkt</n>
+            </item>
+            <item n="R0.WeekProgWarn">
+                <n>R0.WeekProgWarn</n>
+            </item>
+            <item n="R0.kurzID">
+                <n>R0.kurzID</n>
+            </item>
+            <item n="R0.numberOfPairedDevices">
+                <n>R0.numberOfPairedDevices</n>
+            </item>
+            <item n="R0.uniqueId">
+                <n>R0.uniqueId</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="STELL">
+        <items>
+            <item n="STELL-APP">
+                <n>STELL-APP</n>
+            </item>
+            <item n="STELL-BL">
+                <n>STELL-BL</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="STM">
+        <items>
+            <item n="STM-APP">
+                <n>STM-APP</n>
+            </item>
+            <item n="STM-BL">
+                <n>STM-BL</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="VPI">
+        <items>
+            <item n="VPI.href">
+                <n>VPI.href</n>
+            </item>
+            <item n="VPI.state">
+                <n>VPI.state</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="hw">
+        <items>
+            <item n="hw.Addr">
+                <n>hw.Addr</n>
+            </item>
+            <item n="hw.DNS1">
+                <n>hw.DNS1</n>
+            </item>
+            <item n="hw.DNS2">
+                <n>hw.DNS2</n>
+            </item>
+            <item n="hw.GW">
+                <n>hw.GW</n>
+            </item>
+            <item n="hw.HostName">
+                <n>hw.HostName</n>
+            </item>
+            <item n="hw.IP">
+                <n>hw.IP</n>
+            </item>
+            <item n="hw.NM">
+                <n>hw.NM</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Misc">
+        <items>
+            <item n="isMaster">
+                <n>isMaster</n>
+            </item>
+            <item n="numberOfSlaveControllers">
+                <n>numberOfSlaveControllers</n>
+            </item>
+            <item n="totalNumberOfDevices">
+                <n>totalNumberOfDevices</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">F&#xF6;rr&#xE5;d</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G0.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G0.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G0.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G0.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">Sovrum</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G1.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G1.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G1.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G1.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">G&#xE4;strum</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G2.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G2.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G2.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G2.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">Bibliotek</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G3.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G3.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G3.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G3.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">Vardagsrum</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G4.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G4.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G4.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G4.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">Tambur / WC</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G5.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G5.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G5.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G5.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">Arbetsrum</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G6.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G6.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G6.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G6.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">K&#xF6;k</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G7.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G7.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G7.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G7.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+    <measurement name="Thermostat">
+        <tags>
+            <tag key="Thermostat">Hj&#xE4;lpk&#xF6;k</tag>
+        </tags>
+        <items>
+            <item n="RaumTemp">
+                <n>G8.RaumTemp</n>
+            </item>
+            <item n="WeekProg">
+                <n>G8.WeekProg</n>
+            </item>
+            <item n="name">
+                <n>G8.name</n>
+            </item>
+            <item n="TempSIUnit">
+                <n>G8.TempSIUnit</n>
+            </item>
+        </items>
+    </measurement>
+</measurements>
