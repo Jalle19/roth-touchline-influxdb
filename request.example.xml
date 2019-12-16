@@ -123,6 +123,15 @@
             <field n="RaumTemp">
                 <n>G0.RaumTemp</n>
             </field>
+            <field n="SollTemp">
+                <n>G0.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G0.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G0.OPModeEna</n>
+            </field>
             <field n="WeekProg">
                 <n>G0.WeekProg</n>
             </field>
@@ -141,6 +150,15 @@
         <fields>
             <field n="RaumTemp">
                 <n>G1.RaumTemp</n>
+            </field>
+            <field n="SollTemp">
+                <n>G1.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G1.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G1.OPModeEna</n>
             </field>
             <field n="WeekProg">
                 <n>G1.WeekProg</n>
@@ -161,6 +179,15 @@
             <field n="RaumTemp">
                 <n>G2.RaumTemp</n>
             </field>
+            <field n="SollTemp">
+                <n>G2.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G2.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G2.OPModeEna</n>
+            </field>
             <field n="WeekProg">
                 <n>G2.WeekProg</n>
             </field>
@@ -179,6 +206,15 @@
         <fields>
             <field n="RaumTemp">
                 <n>G3.RaumTemp</n>
+            </field>
+            <field n="SollTemp">
+                <n>G3.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G3.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G3.OPModeEna</n>
             </field>
             <field n="WeekProg">
                 <n>G3.WeekProg</n>
@@ -199,6 +235,15 @@
             <field n="RaumTemp">
                 <n>G4.RaumTemp</n>
             </field>
+            <field n="SollTemp">
+                <n>G4.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G4.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G4.OPModeEna</n>
+            </field>
             <field n="WeekProg">
                 <n>G4.WeekProg</n>
             </field>
@@ -217,6 +262,15 @@
         <fields>
             <field n="RaumTemp">
                 <n>G5.RaumTemp</n>
+            </field>
+            <field n="SollTemp">
+                <n>G5.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G5.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G5.OPModeEna</n>
             </field>
             <field n="WeekProg">
                 <n>G5.WeekProg</n>
@@ -237,6 +291,15 @@
             <field n="RaumTemp">
                 <n>G6.RaumTemp</n>
             </field>
+            <field n="SollTemp">
+                <n>G6.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G6.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G6.OPModeEna</n>
+            </field>
             <field n="WeekProg">
                 <n>G6.WeekProg</n>
             </field>
@@ -256,6 +319,15 @@
             <field n="RaumTemp">
                 <n>G7.RaumTemp</n>
             </field>
+            <field n="SollTemp">
+                <n>G7.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G7.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G7.OPModeEna</n>
+            </field>
             <field n="WeekProg">
                 <n>G7.WeekProg</n>
             </field>
@@ -274,6 +346,15 @@
         <fields>
             <field n="RaumTemp">
                 <n>G8.RaumTemp</n>
+            </field>
+            <field n="SollTemp">
+                <n>G8.SollTemp</n>
+            </field>
+            <field n="OPMode">
+                <n>G8.OPMode</n>
+            </field>
+            <field n="OPModeEna">
+                <n>G8.OPModeEna</n>
             </field>
             <field n="WeekProg">
                 <n>G8.WeekProg</n>

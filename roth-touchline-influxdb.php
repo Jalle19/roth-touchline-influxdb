@@ -133,6 +133,9 @@ $statisticsMeasurementsFieldsMap = [
 // Define the values we want to query for each thermostat
 $thermostatFields = [
     'RaumTemp',
+    'SollTemp',
+    'OPMode',
+    'OPModeEna',
     'WeekProg',
     'name',
     'TempSIUnit',
