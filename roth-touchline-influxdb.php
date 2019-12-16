@@ -78,8 +78,8 @@ foreach ($thermostatResponseElement as $thermostat) {
     $thermostatNameMap[(int)$thermostat['id']] = (string)$thermostat->v;
 }
 
-// Define all values we want to query for
-$statisticsItems = [
+// Define all measurements and fields we want to query for
+$statisticsMeasurementsFieldsMap = [
     // CD values
     'CD'         => [
         'CD.uname',
@@ -131,32 +131,32 @@ $statisticsItems = [
 ];
 
 // Define the values we want to query for each thermostat
-$thermostatItems = [
+$thermostatFields = [
     'RaumTemp',
     'WeekProg',
     'name',
     'TempSIUnit',
 ];
 
-// Build the statistics query XML document
-$statisticsElement = new SimpleXMLElement('<measurements></measurements>');
+// Build the main query XML document
+$measurementsElement = new SimpleXMLElement('<measurements></measurements>');
 
-foreach ($statisticsItems as $measurement => $items) {
-    $measurementElement = $statisticsElement->addChild('measurement');
+foreach ($statisticsMeasurementsFieldsMap as $measurement => $fields) {
+    $measurementElement = $measurementsElement->addChild('measurement');
     $measurementElement->addAttribute('name', $measurement);
 
-    $itemsElement = $measurementElement->addChild('items');
+    $fieldsElement = $measurementElement->addChild('fields');
 
-    foreach ($items as $item) {
-        $itemElement = $itemsElement->addChild('item');
-        $itemElement->addAttribute('n', $item);
-        $nElement = $itemElement->addChild('n', $item);
+    foreach ($fields as $field) {
+        $fieldElement = $fieldsElement->addChild('field');
+        $fieldElement->addAttribute('n', $field);
+        $nElement = $fieldElement->addChild('n', $field);
     }
 }
 
-// Add a bunch of items for each thermostat
+// Add the measurements for the thermostats
 for ($i = 0; $i < $numDevices; $i++) {
-    $measurementElement = $statisticsElement->addChild('measurement');
+    $measurementElement = $measurementsElement->addChild('measurement');
     $measurementElement->addAttribute('name', 'Thermostat');
 
     // We want to tag each thermostat separately, using the name we determined earlier
@@ -164,35 +164,35 @@ for ($i = 0; $i < $numDevices; $i++) {
     $tagElement  = $tagsElement->addChild('tag', $thermostatNameMap[$i]);
     $tagElement->addAttribute('key', 'Thermostat');
 
-    $itemsElement = $measurementElement->addChild('items');
+    $fieldsElement = $measurementElement->addChild('fields');
 
-    foreach ($thermostatItems as $item) {
-        $itemName = sprintf('G%d.%s', $i, $item);
+    foreach ($thermostatFields as $field) {
+        $itemName = sprintf('G%d.%s', $i, $field);
 
-        $itemElement = $itemsElement->addChild('item');
-        $itemElement->addAttribute('n', $item); // intentionally not $itemName
-        $nElement = $itemElement->addChild('n', $itemName);
+        $fieldElement = $fieldsElement->addChild('field');
+        $fieldElement->addAttribute('n', $field); // intentionally not $itemName
+        $nElement = $fieldElement->addChild('n', $itemName);
     }
 }
 
 // Query for the statistics
-$statisticsQuery        = $statisticsElement->asXML();
-$statisticsQueryContext = stream_context_create([
+$measurementsQuery      = $measurementsElement->asXML();
+$measurementsQueryContext = stream_context_create([
     'http' => [
         'method'  => 'POST',
         'header'  => 'Content-Type: text/xml',
-        'content' => $statisticsQuery,
+        'content' => $measurementsQuery,
     ],
 ]);
 
 // Parse the response
-$statisticsResponse = file_get_contents($controllerApiUrl, false, $statisticsQueryContext);
+$measurementsResponse = file_get_contents($controllerApiUrl, false, $measurementsQueryContext);
 
-if ($statisticsResponse === false) {
+if ($measurementsResponse === false) {
     throw new RuntimeException('Failed to query for total number of devices');
 }
 
-$statisticsResponseElement = new SimpleXMLElement($statisticsResponse);
+$measurementsResponseElement = new SimpleXMLElement($measurementsResponse);
 
 // Check if the specified InfluxDB database exists
 $databaseExistsRequestUrl = sprintf('%s/query?q=%s', rtrim($options['influxDbUrl'], '/'), urlencode('SHOW DATABASES'));
@@ -215,7 +215,7 @@ if (!in_array($options['influxDbName'], $availableDatabases, true)) {
 // Prepare queries for InfluxDB
 $influxDbQueries = [];
 
-foreach ($statisticsResponseElement as $measurement) {
+foreach ($measurementsResponseElement as $measurement) {
     $measurementName = (string)$measurement['name'];
     $tagSet          = [];
     $fieldSet        = [];
@@ -231,9 +231,9 @@ foreach ($statisticsResponseElement as $measurement) {
         $tagSet[] = sprintf('%s=%s', $tag['key'], $value);
     }
 
-    foreach ($measurement->items->item as $item) {
-        $fieldName = (string)$item['n'];
-        $value     = (string)$item->v;
+    foreach ($measurement->fields->field as $field) {
+        $fieldName = (string)$field['n'];
+        $value     = (string)$field->v;
 
         // Omit empty values, InfluxDB will refuse to handle them
         if ($value === '') {
@@ -247,7 +247,7 @@ foreach ($statisticsResponseElement as $measurement) {
 
         // Handle known booleans
         if ($fieldName === 'isMaster') {
-            $value = (int)$item->v === 1 ? 'true' : 'false';
+            $value = (int)$field->v === 1 ? 'true' : 'false';
         }
 
         $fieldSet[] = sprintf('%s=%s', $fieldName, $value);

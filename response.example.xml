@@ -1,354 +1,354 @@
 <?xml version="1.0"?>
 <measurements>
     <measurement name="CD">
-        <items>
-            <item n="CD.uname">
+        <fields>
+            <field n="CD.uname">
                 <n>CD.uname</n>
                 <v></v>
-            </item>
-            <item n="CD.upass">
+            </field>
+            <field n="CD.upass">
                 <n>CD.upass</n>
                 <v>1234</v>
-            </item>
-            <item n="CD.reg">
+            </field>
+            <field n="CD.reg">
                 <n>CD.reg</n>
                 <v></v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Controller">
-        <items>
-            <item n="R0.DateTime">
+        <fields>
+            <field n="R0.DateTime">
                 <n>R0.DateTime</n>
-                <v>1576458367</v>
-            </item>
-            <item n="R0.ErrorCode">
+                <v>1576494774</v>
+            </field>
+            <field n="R0.ErrorCode">
                 <n>R0.ErrorCode</n>
                 <v>0</v>
-            </item>
-            <item n="R0.OPModeRegler">
+            </field>
+            <field n="R0.OPModeRegler">
                 <n>R0.OPModeRegler</n>
                 <v>0</v>
-            </item>
-            <item n="R0.Safety">
+            </field>
+            <field n="R0.Safety">
                 <n>R0.Safety</n>
                 <v>0</v>
-            </item>
-            <item n="R0.SystemStatus">
+            </field>
+            <field n="R0.SystemStatus">
                 <n>R0.SystemStatus</n>
                 <v>0</v>
-            </item>
-            <item n="R0.Taupunkt">
+            </field>
+            <field n="R0.Taupunkt">
                 <n>R0.Taupunkt</n>
                 <v>0</v>
-            </item>
-            <item n="R0.WeekProgWarn">
+            </field>
+            <field n="R0.WeekProgWarn">
                 <n>R0.WeekProgWarn</n>
                 <v>1</v>
-            </item>
-            <item n="R0.kurzID">
+            </field>
+            <field n="R0.kurzID">
                 <n>R0.kurzID</n>
                 <v>233</v>
-            </item>
-            <item n="R0.numberOfPairedDevices">
+            </field>
+            <field n="R0.numberOfPairedDevices">
                 <n>R0.numberOfPairedDevices</n>
                 <v>9</v>
-            </item>
-            <item n="R0.uniqueId">
+            </field>
+            <field n="R0.uniqueId">
                 <n>R0.uniqueId</n>
                 <v></v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="STELL">
-        <items>
-            <item n="STELL-APP">
+        <fields>
+            <field n="STELL-APP">
                 <n>STELL-APP</n>
                 <v>1.42</v>
-            </item>
-            <item n="STELL-BL">
+            </field>
+            <field n="STELL-BL">
                 <n>STELL-BL</n>
                 <v>1.11</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="STM">
-        <items>
-            <item n="STM-APP">
+        <fields>
+            <field n="STM-APP">
                 <n>STM-APP</n>
                 <v>A.FA</v>
-            </item>
-            <item n="STM-BL">
+            </field>
+            <field n="STM-BL">
                 <n>STM-BL</n>
                 <v>1.11</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="VPI">
-        <items>
-            <item n="VPI.href">
+        <fields>
+            <field n="VPI.href">
                 <n>VPI.href</n>
-                <v>http://myroth.ininet.ch/remote/asdf/</v>
-            </item>
-            <item n="VPI.state">
+                <v>http://myroth.ininet.ch/remote/sdfsdfsdf/</v>
+            </field>
+            <field n="VPI.state">
                 <n>VPI.state</n>
                 <v>99</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="hw">
-        <items>
-            <item n="hw.Addr">
+        <fields>
+            <field n="hw.Addr">
                 <n>hw.Addr</n>
                 <v>5C-C2-13-00-23-E3</v>
-            </item>
-            <item n="hw.DNS1">
+            </field>
+            <field n="hw.DNS1">
                 <n>hw.DNS1</n>
                 <v>10.110.5.10</v>
-            </item>
-            <item n="hw.DNS2">
+            </field>
+            <field n="hw.DNS2">
                 <n>hw.DNS2</n>
                 <v>0.0.0.0</v>
-            </item>
-            <item n="hw.GW">
+            </field>
+            <field n="hw.GW">
                 <n>hw.GW</n>
                 <v>10.110.5.1</v>
-            </item>
-            <item n="hw.HostName">
+            </field>
+            <field n="hw.HostName">
                 <n>hw.HostName</n>
                 <v>ROTH-0023E3</v>
-            </item>
-            <item n="hw.IP">
+            </field>
+            <field n="hw.IP">
                 <n>hw.IP</n>
                 <v>10.110.4.1</v>
-            </item>
-            <item n="hw.NM">
+            </field>
+            <field n="hw.NM">
                 <n>hw.NM</n>
                 <v>255.255.0.0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Misc">
-        <items>
-            <item n="isMaster">
+        <fields>
+            <field n="isMaster">
                 <n>isMaster</n>
                 <v>1</v>
-            </item>
-            <item n="numberOfSlaveControllers">
+            </field>
+            <field n="numberOfSlaveControllers">
                 <n>numberOfSlaveControllers</n>
                 <v>0</v>
-            </item>
-            <item n="totalNumberOfDevices">
+            </field>
+            <field n="totalNumberOfDevices">
                 <n>totalNumberOfDevices</n>
                 <v>9</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">F&#xF6;rr&#xE5;d</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G0.RaumTemp</n>
-                <v>447</v>
-            </item>
-            <item n="WeekProg">
+                <v>459</v>
+            </field>
+            <field n="WeekProg">
                 <n>G0.WeekProg</n>
                 <v>0</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G0.name</n>
                 <v>Förråd</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G0.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">Sovrum</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G1.RaumTemp</n>
-                <v>2269</v>
-            </item>
-            <item n="WeekProg">
+                <v>2186</v>
+            </field>
+            <field n="WeekProg">
                 <n>G1.WeekProg</n>
                 <v>1</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G1.name</n>
                 <v>Sovrum</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G1.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">G&#xE4;strum</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G2.RaumTemp</n>
-                <v>2240</v>
-            </item>
-            <item n="WeekProg">
+                <v>2165</v>
+            </field>
+            <field n="WeekProg">
                 <n>G2.WeekProg</n>
                 <v>1</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G2.name</n>
                 <v>Gästrum</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G2.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">Bibliotek</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G3.RaumTemp</n>
-                <v>2211</v>
-            </item>
-            <item n="WeekProg">
+                <v>2143</v>
+            </field>
+            <field n="WeekProg">
                 <n>G3.WeekProg</n>
                 <v>1</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G3.name</n>
                 <v>Bibliotek</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G3.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">Vardagsrum</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G4.RaumTemp</n>
-                <v>2305</v>
-            </item>
-            <item n="WeekProg">
+                <v>2199</v>
+            </field>
+            <field n="WeekProg">
                 <n>G4.WeekProg</n>
                 <v>0</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G4.name</n>
                 <v>Vardagsrum</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G4.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">Tambur / WC</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G5.RaumTemp</n>
-                <v>2241</v>
-            </item>
-            <item n="WeekProg">
+                <v>2151</v>
+            </field>
+            <field n="WeekProg">
                 <n>G5.WeekProg</n>
                 <v>0</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G5.name</n>
                 <v>Tambur / WC</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G5.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">Arbetsrum</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G6.RaumTemp</n>
-                <v>2282</v>
-            </item>
-            <item n="WeekProg">
+                <v>2190</v>
+            </field>
+            <field n="WeekProg">
                 <n>G6.WeekProg</n>
                 <v>1</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G6.name</n>
                 <v>Arbetsrum</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G6.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">K&#xF6;k</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G7.RaumTemp</n>
-                <v>2247</v>
-            </item>
-            <item n="WeekProg">
+                <v>2158</v>
+            </field>
+            <field n="WeekProg">
                 <n>G7.WeekProg</n>
                 <v>0</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G7.name</n>
                 <v>Kök</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G7.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
     <measurement name="Thermostat">
         <tags>
             <tag key="Thermostat">Hj&#xE4;lpk&#xF6;k</tag>
         </tags>
-        <items>
-            <item n="RaumTemp">
+        <fields>
+            <field n="RaumTemp">
                 <n>G8.RaumTemp</n>
-                <v>2306</v>
-            </item>
-            <item n="WeekProg">
+                <v>2283</v>
+            </field>
+            <field n="WeekProg">
                 <n>G8.WeekProg</n>
                 <v>0</v>
-            </item>
-            <item n="name">
+            </field>
+            <field n="name">
                 <n>G8.name</n>
                 <v>Hjälpkök</v>
-            </item>
-            <item n="TempSIUnit">
+            </field>
+            <field n="TempSIUnit">
                 <n>G8.TempSIUnit</n>
                 <v>0</v>
-            </item>
-        </items>
+            </field>
+        </fields>
     </measurement>
 </measurements>
