@@ -26,8 +26,8 @@ XML;
 
 $numDevicesContext = stream_context_create([
     'http' => [
-        'method'  => 'POST',
-        'header'  => 'Content-Type: text/xml',
+        'method' => 'POST',
+        'header' => 'Content-Type: text/xml',
         'content' => $numDevicesQuery,
     ],
 ]);
@@ -40,7 +40,7 @@ if ($numDevicesResponse === false) {
 }
 
 $numDevicesResponseElement = new SimpleXMLElement($numDevicesResponse);
-$numDevices                = (int)$numDevicesResponseElement->v;
+$numDevices = (int)$numDevicesResponseElement->v;
 
 if ($numDevices === 0) {
     throw new RuntimeException('Total number of devices is zero, cannot continue');
@@ -57,8 +57,8 @@ for ($i = 0; $i < $numDevices; $i++) {
 
 $thermostatQueryContext = stream_context_create([
     'http' => [
-        'method'  => 'POST',
-        'header'  => 'Content-Type: text/xml',
+        'method' => 'POST',
+        'header' => 'Content-Type: text/xml',
         'content' => $thermostatQueryElement->asXML(),
     ],
 ]);
@@ -72,7 +72,7 @@ if ($thermostatResponse === false) {
 
 // Build a map of thermostat names
 $thermostatResponseElement = new SimpleXMLElement($thermostatResponse);
-$thermostatNameMap         = [];
+$thermostatNameMap = [];
 
 foreach ($thermostatResponseElement as $thermostat) {
     $thermostatNameMap[(int)$thermostat['id']] = (string)$thermostat->v;
@@ -81,7 +81,7 @@ foreach ($thermostatResponseElement as $thermostat) {
 // Define all measurements and fields we want to query for
 $statisticsMeasurementsFieldsMap = [
     // CD values
-    'CD'         => [
+    'CD' => [
         'CD.uname',
         'CD.upass',
         'CD.reg',
@@ -100,20 +100,20 @@ $statisticsMeasurementsFieldsMap = [
         'R0.uniqueId',
     ],
     // STELL/STM/VPI values
-    'STELL'      => [
+    'STELL' => [
         'STELL-APP',
         'STELL-BL',
     ],
-    'STM'        => [
+    'STM' => [
         'STM-APP',
         'STM-BL',
     ],
-    'VPI'        => [
+    'VPI' => [
         'VPI.href',
         'VPI.state',
     ],
     // hw values
-    'hw'         => [
+    'hw' => [
         'hw.Addr',
         'hw.DNS1',
         'hw.DNS2',
@@ -123,7 +123,7 @@ $statisticsMeasurementsFieldsMap = [
         'hw.NM',
     ],
     // Other values
-    'Misc'       => [
+    'Misc' => [
         'isMaster',
         'numberOfSlaveControllers',
         'totalNumberOfDevices',
@@ -164,7 +164,7 @@ for ($i = 0; $i < $numDevices; $i++) {
 
     // We want to tag each thermostat separately, using the name we determined earlier
     $tagsElement = $measurementElement->addChild('tags');
-    $tagElement  = $tagsElement->addChild('tag', $thermostatNameMap[$i]);
+    $tagElement = $tagsElement->addChild('tag', $thermostatNameMap[$i]);
     $tagElement->addAttribute('key', 'Thermostat');
 
     $fieldsElement = $measurementElement->addChild('fields');
@@ -179,11 +179,11 @@ for ($i = 0; $i < $numDevices; $i++) {
 }
 
 // Query for the statistics
-$measurementsQuery      = $measurementsElement->asXML();
+$measurementsQuery = $measurementsElement->asXML();
 $measurementsQueryContext = stream_context_create([
     'http' => [
-        'method'  => 'POST',
-        'header'  => 'Content-Type: text/xml',
+        'method' => 'POST',
+        'header' => 'Content-Type: text/xml',
         'content' => $measurementsQuery,
     ],
 ]);
@@ -206,7 +206,7 @@ if ($databaseExistsResponse === false) {
 }
 
 $databaseExistsDecodedResponse = json_decode($databaseExistsResponse, true);
-$availableDatabases            = array_map(static function ($value) {
+$availableDatabases = array_map(static function ($value) {
     return $value[0];
 }, $databaseExistsDecodedResponse['results'][0]['series'][0]['values']);
 
@@ -220,8 +220,8 @@ $influxDbQueries = [];
 
 foreach ($measurementsResponseElement as $measurement) {
     $measurementName = (string)$measurement['name'];
-    $tagSet          = [];
-    $fieldSet        = [];
+    $tagSet = [];
+    $fieldSet = [];
 
     foreach ($measurement->tags->tag ?? [] as $tag) {
         $value = (string)$tag;
@@ -236,7 +236,7 @@ foreach ($measurementsResponseElement as $measurement) {
 
     foreach ($measurement->fields->field as $field) {
         $fieldName = (string)$field['n'];
-        $value     = (string)$field->v;
+        $value = (string)$field->v;
 
         // Omit empty values, InfluxDB will refuse to handle them
         if ($value === '') {
