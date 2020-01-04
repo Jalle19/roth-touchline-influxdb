@@ -15,6 +15,13 @@ if (count($options) !== 5) {
     die('Usage: ' . $argv[0] . " --controllerIpAddress <ipAddress> --influxDbUrl <influxDbUrl> --influxDbName <influxDbName> --influxDbUsername <influxDbUsername> --influxDbPassword <influxDbPassword>\n");
 }
 
+function createInfluxDbAuthorizationHeader($options): string
+{
+    $encoded = base64_encode(sprintf('%s:%s', $options['influxDbUsername'], $options['influxDbPassword']));
+
+    return sprintf('Authorization: Basic %s', $encoded);
+}
+
 $controllerApiUrl = sprintf('http://%s/cgi-bin/ILRReadValues.cgi', $options['controllerIpAddress']);
 
 // Query the total number of devices so we know how many thermostats we should query for later
@@ -198,8 +205,13 @@ if ($measurementsResponse === false) {
 $measurementsResponseElement = new SimpleXMLElement($measurementsResponse);
 
 // Check if the specified InfluxDB database exists
+$databaseExistsContext = stream_context_create([
+    'http' => [
+        'header' => createInfluxDbAuthorizationHeader($options),
+    ],
+]);
 $databaseExistsRequestUrl = sprintf('%s/query?q=%s', rtrim($options['influxDbUrl'], '/'), urlencode('SHOW DATABASES'));
-$databaseExistsResponse   = @file_get_contents($databaseExistsRequestUrl);
+$databaseExistsResponse = @file_get_contents($databaseExistsRequestUrl, false, $databaseExistsContext);
 
 if ($databaseExistsResponse === false) {
     throw new RuntimeException('Failed to query list of databases from InfluxDb');
@@ -208,7 +220,7 @@ if ($databaseExistsResponse === false) {
 $databaseExistsDecodedResponse = json_decode($databaseExistsResponse, true);
 $availableDatabases = array_map(static function ($value) {
     return $value[0];
-}, $databaseExistsDecodedResponse['results'][0]['series'][0]['values']);
+}, $databaseExistsDecodedResponse['results'][0]['series'][0]['values'] ?? []);
 
 if (!in_array($options['influxDbName'], $availableDatabases, true)) {
     throw new RuntimeException(sprintf('The specified database "%s" does not exist in InfluxDb',
@@ -264,20 +276,18 @@ foreach ($measurementsResponseElement as $measurement) {
 }
 
 // Write the measurements to InfluxDB
-$combinedInfluxDbQuery = implode("\n", $influxDbQueries);
-
-//echo sprintf("curl -i -XPOST '%s/write?db=%s' --data-binary '%s'", rtrim($options['influxDbUrl'], '/'),
-//    $options['influxDbName'], $combinedInfluxDbQuery);
-
 $writeContext = stream_context_create([
     'http' => [
-        'method'  => 'POST',
-        'header'  => 'Content-Type: text/plain',
-        'content' => $combinedInfluxDbQuery,
+        'method' => 'POST',
+        'header' => [
+            'Authorization' => createInfluxDbAuthorizationHeader($options),
+            'Content-Type: text/plain',
+        ],
+        'content' => implode("\n", $influxDbQueries),
     ],
 ]);
 
-$writeApiUrl        = sprintf('%s/write?db=%s', rtrim($options['influxDbUrl'], '/'), $options['influxDbName']);
+$writeApiUrl = sprintf('%s/write?db=%s', rtrim($options['influxDbUrl'], '/'), $options['influxDbName']);
 $numDevicesResponse = file_get_contents($writeApiUrl, false, $writeContext);
 
 if ($numDevicesResponse === false) {
